@@ -15,7 +15,8 @@ public class EnvoiOk{
 //////c'est ici nous allons tout faire////////////////
     public static void EnvoiO(){
         OkHttpClient client = new OkHttpClient();
-        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/API/v1/saveuser/").newBuilder();
+        //HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/API/v1/saveuser/").newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/model/usercka.php").newBuilder();
         String url = urlBuilder.build().toString();
         urlBuilder.addQueryParameter("tel1", "tel1");
         urlBuilder.addQueryParameter("tel2", "tel2");
