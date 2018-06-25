@@ -1,7 +1,7 @@
 package com.example.cka.smartckeckdata;
 
 import java.io.IOException;
-import android.support.design.widget.Snackbar;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -11,7 +11,6 @@ import okhttp3.Request;
 
 //public class EnvoiOk  implements  Callback{
 public class EnvoiOk{
-    private Snackbar snackbar;
 
 //////c'est ici nous allons tout faire////////////////
     public static void EnvoiO(){
