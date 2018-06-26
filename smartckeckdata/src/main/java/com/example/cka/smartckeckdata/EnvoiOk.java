@@ -1,5 +1,7 @@
 package com.example.cka.smartckeckdata;
 
+import android.util.Log;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -16,11 +18,12 @@ public class EnvoiOk{
     public static void EnvoiO(){
         OkHttpClient client = new OkHttpClient();
         //HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/API/v1/saveuser/").newBuilder();
-        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/model/usercka.php").newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/fr/crud.php").newBuilder();
+        //HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/model/usercka.php").newBuilder();
         String url = urlBuilder.build().toString();
-        urlBuilder.addQueryParameter("tel1", "tel1");
-        urlBuilder.addQueryParameter("tel2", "tel2");
-        urlBuilder.addQueryParameter("tel3", "tel3");
+        urlBuilder.addQueryParameter("nom", "nom");
+        urlBuilder.addQueryParameter("numero", "021548");
+        /*urlBuilder.addQueryParameter("tel3", "tel3");
         urlBuilder.addQueryParameter("tel4", "tel4");
         urlBuilder.addQueryParameter("imei", "imei");
         urlBuilder.addQueryParameter("version", "version");
@@ -31,7 +34,7 @@ public class EnvoiOk{
         urlBuilder.addQueryParameter("fb", "fb");
         urlBuilder.addQueryParameter("dat_ins", "dat_ins");
         urlBuilder.addQueryParameter("etat", "etat");
-        urlBuilder.addQueryParameter("statut", "statut");
+        urlBuilder.addQueryParameter("statut", "statut");*/
 
 ////////cest ici////////
         /*Request request = new Request.Builder()
@@ -39,17 +42,18 @@ public class EnvoiOk{
                 .build();*/
 
 
-        Request request = new Request.Builder().url(url).build();
+        final Request request = new Request.Builder().url(url).build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
+                Log.w("l'erreur est ici", e);
+                System.out.println("votre erreur"+e);
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-
+            Log.i("la requete est ", String.valueOf(response+" et "+ request));
             }
         });
     }
