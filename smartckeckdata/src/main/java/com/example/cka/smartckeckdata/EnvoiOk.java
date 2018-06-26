@@ -27,8 +27,23 @@ public class EnvoiOk{
         OkHttpClient client = new OkHttpClient();
         JSONObject postdata = new JSONObject();
         try {
-            postdata.put("nom", "Konzaga");
-            postdata.put("numero", "49599779");
+            postdata.put("tel1", "747965842");
+            postdata.put("tel2", "49599779");
+            postdata.put("tel3", "49599778");
+            postdata.put("tel4", "42157862");
+            postdata.put("imei", "251k");
+            postdata.put("version", "android 5");
+            postdata.put("model", "A5");
+            postdata.put("duree_activite", "20");
+            postdata.put("gmail", "mail.com");
+            postdata.put("twitter", "twitter.com");
+
+            postdata.put("fb", "fb.com");
+            postdata.put("dat_ins", "20/03/2018");
+            postdata.put("heure_ins", "20:30");
+            postdata.put("last_update", "18/09/2018");
+            postdata.put("etat", "actif");
+            postdata.put("statut", "actif");
         } catch(JSONException e){
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -36,8 +51,8 @@ public class EnvoiOk{
 
         RequestBody body = RequestBody.create(MEDIA_TYPE, postdata.toString());
 
-        //HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/API/v1/saveuser/").newBuilder();
-        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/fr/crud.php").newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/API/v1/saveuser/").newBuilder();
+        //HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/fr/crud.php").newBuilder();
         //HttpUrl.Builder urlBuilder = HttpUrl.parse("http://smart-data-tech.com/dev/model/usercka.php").newBuilder();
         String url = urlBuilder.build().toString();
        /* urlBuilder.addQueryParameter("nom", "nom");
